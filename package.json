@@ -1,0 +1,20 @@
+{
+  "name": "weeafoo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Julius Dorfman",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn server",
+    "heroku-postbuild": "YARN_PRODUCTION=false cd client/ && yarn install && yarn install --only=dev --no-shrinkwrap && yarn run build",
+    "client": "cd client && yarn start",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4"
+  }
+}
