@@ -62,7 +62,8 @@ router.get('/categories/:category', (req, res) => {
     categoryResult.animePosters = animePosters;
 
     return res.json({
-      categoryResult: categoryResult
+      categoryResult: categoryResult,
+      rawData: result.data
     })
   }).catch(err => {
     console.log(err)
